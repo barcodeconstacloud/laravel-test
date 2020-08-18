@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'getRegister', 'uses' => 'MainController@showRegisterForm']);
+Route::post('doRegister', 'MainController@create')->name('doRegister');
+Route::get('/download/{file}', 'MainController@download')->name('download');;
